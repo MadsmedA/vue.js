@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/notes.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Indkøbsliste</title>
+  </head>
+  <body>
+    <div id="notes">
+      <ul>
+        <li v-for="(n, i) in notes">
+          <input type="checkbox" />
+          <span @click="editText(i)"> {{ n.title }}</span>
+        </li>
+      </ul>
+
+      <input type="text" v-model="note" v-on:keyup.enter="onSaveNote" />
+      <button v-on:click="onSaveNote">Gem</button>
+    </div>
+
+    <script src="assets/js/notes.js"></script>
+  </body>
+</html>
